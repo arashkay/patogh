@@ -1,0 +1,44 @@
+.row
+  .col-xs-12
+    .row
+      .col-sm-6
+        h2 Venues
+      .col-sm-6
+        .pull-right
+          = paginate @venues
+    .list
+      -@venues.each do |venue|
+        .row class=(venue.live? ? 'marked' : '')
+          .col-sm-2
+            img.auto src=venue.image(:thumb)
+          .col-sm-4
+            .title= venue.name
+            .subtitle
+              = " (#{venue.latitude} , #{venue.longitude})"
+            .note
+              | Phone: 
+              = venue.phone
+            .note
+              | Address: 
+              = venue.address
+            .description= venue.card_description
+          .col-sm-6
+            .row
+              .col-xs-4
+                img.auto src=venue.card_image(:thumb)
+              .col-xs-2
+                img.auto src=venue.card_on(:thumb)
+              .col-xs-2
+                img.auto src=venue.card_off(:thumb)
+          .actions
+            .btn-group
+              a.btn.btn-primary href=edit_panel_venue_path(venue)  Edit
+              a.btn.btn-danger data-remote=panel_venue_path(venue) data-success='geo.reload' data-method='DELETE'  Destroy
+              -if current_admin.is_wizard?
+                -if venue.live?
+                  a.btn.btn-warning data-remote=pause_panel_venue_path(venue) data-success='geo.reload' Pause
+                -else
+                  a.btn.btn-success data-remote=approve_panel_venue_path(venue) data-success='geo.reload' Live
+    .center.pull-right
+      = paginate @venues
+

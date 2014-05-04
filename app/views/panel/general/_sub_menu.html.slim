@@ -1,0 +1,10 @@
+-if current_admin.is_wizard?
+  li 
+    a href=panel_users_path
+      i.fa.fa-users
+      |  Users
+-if current_admin.has_role? [:hobbit, :wizard]
+  li 
+    a href=panel_venues_path
+      i.fa.fa-map-marker
+      |  Venues

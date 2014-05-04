@@ -1,0 +1,61 @@
+.row
+  .col-xs-12
+    h2 Venue
+    = form_for @venue, url: ( @venue.new_record? ? panel_venues_path : panel_venue_path(@venue)), html: { multipart: true, class: 'form-horizontal' } do |form|
+      .form-group
+        label.control-label.col-sm-3 Name
+        .col-sm-6
+          = form.text_field :name, class: 'form-control', placeholder: 'Name'
+      .form-group
+        label.control-label.col-sm-3 Phone
+        .col-sm-6
+          = form.text_field :phone, class: 'form-control', placeholder: 'Phone'
+      .form-group
+        label.control-label.col-sm-3 Address
+        .col-sm-6
+          = form.text_field :address, class: 'form-control', placeholder: 'Address'
+      .form-group
+        label.control-label.col-sm-3 Location
+        .col-sm-3
+          = form.text_field :latitude, class: 'form-control', placeholder: 'Latitude'
+        .col-sm-3
+          = form.text_field :longitude, class: 'form-control', placeholder: 'Longitude'
+      .form-group
+        label.control-label.col-sm-3 Image
+        .col-sm-3
+          a.btn.btn-file
+            = form.file_field :image
+            i.fa.fa-picture-o.fa-lg
+            |  Attach
+      .form-group
+        .col-sm-6.col-sm-offset-3
+          hr
+          h4 
+            .checkbox
+              label for='has_card'
+                = form.check_box :has_card
+                | Card
+      .form-group
+        label.control-label.col-sm-3 How
+        .col-sm-6
+          = form.text_area :card_description, class: 'form-control', placeholder: 'Description', rows: 2
+      .form-group
+        label.control-label.col-sm-3 Images
+        .col-sm-6
+          a.btn.btn-file
+            = form.file_field :card_image
+            i.fa.fa-picture-o.fa-lg
+            |  Main
+          |  
+          a.btn.btn-file
+            = form.file_field :card_on
+            i.fa.fa-picture-o.fa-lg
+            |  On
+          |  
+          a.btn.btn-file
+            = form.file_field :card_off
+            i.fa.fa-picture-o.fa-lg
+            |  Off
+      .form-group.actions
+        .col-sm-offset-3.col-sm-6
+          = form.submit 'Save venue', class: 'btn btn-primary'
