@@ -33,6 +33,8 @@ class Venue < ActiveRecord::Base
     end
   end
 
+  scope :live, -> { where( state: :live ) }
+
 #METHODS
   def self.around_me( latitude, longitude )
     where(state: 'live').near([latitude, longitude], APP::VENUE::DISTANCE, :units => :km)

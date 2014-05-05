@@ -30,11 +30,12 @@ module APP
 #  end
 
   module PHOTO
-    CARD   = { small400: '400x225#', thumb: '200x112#' }
-    VENUE   = { small400: '400x200#', thumb: '200x112#' }
+    CARD         = { small400: '400x225#', thumb: '200x112#' }
+    VENUE        = { small400: '400x200#', thumb: '200x112#' }
+    COUPON       = { small400: '400x300#', thumb: '200x150#' }
     PUNCH_HOLE   = { small200: '200x200#', small120: '120x120#' }
-    AVATAR = { small200: '200x200#', small120: '120x120#' }
-    TYPES = ["image/jpg", "image/jpeg", "image/png"]
+    AVATAR       = { small200: '200x200#', small120: '120x120#' }
+    TYPES        = ["image/jpg", "image/jpeg", "image/png"]
   end
 
   module DEVICE

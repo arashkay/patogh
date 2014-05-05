@@ -1,4 +1,4 @@
-- if (%w(panel/venues panel/flags panel/users).include? params[:controller]) || ( params[:controller] == 'panel/general' && params[:action] == 'index' )
+- if (%w(panel/venues panel/coupons panel/flags panel/users).include? params[:controller]) || ( params[:controller] == 'panel/general' && params[:action] == 'index' )
   .navbar.navbar-default.submenu.fn-submenu role='navigation'
     .navbar-header
       button.navbar-toggle type='button' data-toggle='collapse' data-target='#main-sub-menu'
@@ -10,6 +10,10 @@
         .navbar-brand 
           i.fa.fa-map-marker.fa-lg
           |  Venues
+      - if 'panel/coupons' == params[:controller]
+        .navbar-brand 
+          i.fa.fa-map-marker.fa-lg
+          |  Venuess
       - if 'panel/flags' == params[:controller]
         .navbar-brand 
           i.fa.fa-flag.fa-lg
@@ -22,6 +26,8 @@
       ul.nav.navbar-nav
         - if 'panel/venues' == params[:controller]
           =render partial: '/panel/venues/sub_menu'
+        - if 'panel/coupons' == params[:controller]
+          =render partial: '/panel/coupons/sub_menu'
         - if 'panel/flags' == params[:controller]
           =render partial: '/panel/flags/sub_menu'
         - if 'panel/users' == params[:controller]

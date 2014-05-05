@@ -1,0 +1,28 @@
+.row
+  .col-xs-12
+    .row
+      .col-sm-6
+        h2 Venues
+      .col-sm-6
+        .pull-right
+          = paginate @coupons
+    .list
+      -@coupons.each do |coupon|
+        .row class=(coupon.live? ? 'marked' : '')
+          .col-sm-2
+            img.auto src=coupon.image(:thumb)
+          .col-sm-4
+            .title= coupon.title
+            .description= coupon.description
+          .actions
+            .btn-group
+              a.btn.btn-primary href=edit_panel_coupon_path(coupon)  Edit
+              a.btn.btn-danger data-remote=panel_coupon_path(coupon) data-success='geo.reload' data-method='DELETE'  Destroy
+              -if current_admin.is_wizard?
+                -if coupon.live?
+                  a.btn.btn-warning data-remote=pause_panel_coupon_path(coupon) data-success='geo.reload' Pause
+                -else
+                  a.btn.btn-success data-remote=start_panel_coupon_path(coupon) data-success='geo.reload' Live
+    .center.pull-right
+      = paginate @coupons
+

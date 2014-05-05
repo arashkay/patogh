@@ -12,6 +12,12 @@ Rails.application.routes.draw do
         post :pause
       end
     end
+    resources :coupons do
+      member do
+        post :start
+        post :pause
+      end
+    end
     resources :cards
     resources :users, only: [:index]
   end
@@ -33,8 +39,15 @@ Rails.application.routes.draw do
             post :punch
           end
         end
+        resources :coupons, only: [] do
+          collection do
+            get '/', action: :me
+            post :mark
+          end
+        end
       end
       resources :cards, only:[:index]
+      resources :coupons, only:[:index]
       resources :notifications, only:[] do
         collection do
           post :mock

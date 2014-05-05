@@ -1,0 +1,30 @@
+.row
+  .col-xs-12
+    h2 Venue
+    = form_for @coupon, url: ( @coupon.new_record? ? panel_coupons_path : panel_coupon_path(@coupon)), html: { multipart: true, class: 'form-horizontal' } do |form|
+      .form-group
+        label.control-label.col-sm-3 Title
+        .col-sm-6
+          = form.text_field :title, class: 'form-control', placeholder: 'Title'
+      .form-group
+        label.control-label.col-sm-3 Create
+        .col-sm-6
+          = form.text_field :start_date, class: 'form-control', placeholder: 'Created Date'
+      .form-group
+        label.control-label.col-sm-3 Update
+        .col-sm-6
+          = form.text_field :expires_at, class: 'form-control', placeholder: 'Update Date'
+      .form-group
+        label.control-label.col-sm-3 Image
+        .col-sm-3
+          a.btn.btn-file
+            = form.file_field :image
+            i.fa.fa-picture-o.fa-lg
+            |  Attach
+      .form-group
+        label.control-label.col-sm-3 Description
+        .col-sm-6
+          = form.text_area :description, class: 'form-control', placeholder: 'Description', rows: 3
+      .form-group.actions
+        .col-sm-offset-3.col-sm-6
+          = form.submit 'Save venue', class: 'btn btn-primary'

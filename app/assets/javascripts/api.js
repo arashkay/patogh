@@ -36,6 +36,10 @@ var api = [
     params: { card: ['ucode'] }
   },
   { 
+    path: "POST /api/v1/me/coupons/mark.json",
+    params: { coupon: ['id'], mark: null }
+  },
+  { 
     path: "POST /api/v1/me/messages.json",
     params: { message: ['to_user_id', 'body'] }
   },
