@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
   end
   
   def self.me_by_device( device_id )
-    Device.where( device_id: device_id ).first.user
+    Device.where( device_id: device_id ).first.try :user
   end
 
   def new_session!

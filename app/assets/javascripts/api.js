@@ -32,6 +32,10 @@ var api = [
     params: { card: ['ucode'] }
   },
   { 
+    path: "POST /api/v1/me/cards/use.json",
+    params: { card: ['ucode'] }
+  },
+  { 
     path: "POST /api/v1/me/messages.json",
     params: { message: ['to_user_id', 'body'] }
   },
