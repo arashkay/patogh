@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#ffffffff</color>
+    <color name="blue">#ff43a4fe</color>
+    <color name="pink">#ffe725b3</color>
+    <color name="gold">#ffd4af19</color>
+
+    <color name="background">#c6c6c6</color>
+    <color name="box_background">#ffffffff</color>
+    <color name="label_background">#77ffffff</color>
+    <color name="extra_background">#ffefefef</color>
+    <color name="menu_button">#ff989898</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="dialog_button">#ff333333</color>
+    <color name="dialog_button_text">#ffeeeeee</color>
+    <color name="dialog_button_secondary">#00ffffff</color>
+    <color name="dialog_button_text_secondary">#ff333333</color>
+
+    <color name="h1">#ff43a4fe</color>
+
+</resources>

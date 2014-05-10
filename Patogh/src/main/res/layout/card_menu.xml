@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="48dip"
+    android:paddingBottom="5dp">
+
+        <Button
+            android:id="@+id/loyalty_filter"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/loyalty.favorite"
+            android:layout_weight="1"
+            style="@style/MenuButton"/>
+
+        <Button
+            android:id="@+id/loyalty_scan"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/loyalty.scan"
+            android:drawableRight="@drawable/ic_scan"
+            android:layout_weight="1"
+            style="@style/MenuButton"/>
+</LinearLayout>

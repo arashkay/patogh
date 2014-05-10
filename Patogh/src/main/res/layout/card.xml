@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="1dp">
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/punch_card"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="70dp"
+            android:id="@+id/logo"/>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/label_background"
+            android:textSize="40sp"
+            android:padding="5dp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/punch_holes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/inside_top_shadow"
+        android:paddingTop="10dp"
+        android:visibility="gone"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <ImageView
+                android:id="@+id/punch_hole1"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                style="@style/Punch"/>
+
+            <ImageView
+                android:id="@+id/punch_hole2"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                style="@style/Punch"/>
+
+            <ImageView
+                android:id="@+id/punch_hole3"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                style="@style/Punch"/>
+
+            <ImageView
+                android:id="@+id/punch_hole4"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                style="@style/Punch"/>
+
+            <ImageView
+                android:id="@+id/punch_hole5"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                style="@style/Punch"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <ImageView
+                android:id="@+id/punch_hole6"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                style="@style/Punch"/>
+
+            <ImageView
+                android:id="@+id/punch_hole7"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                style="@style/Punch"/>
+
+            <ImageView
+                android:id="@+id/punch_hole8"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                style="@style/Punch"/>
+
+            <ImageView
+                android:id="@+id/punch_hole9"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                style="@style/Punch"/>
+
+            <ImageView
+                android:id="@+id/punch_hole10"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                style="@style/Punch"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp">
+
+            <Button
+                android:id="@+id/use_punches"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/loyalty.use"
+                android:visibility="gone"
+                style="@style/PrimaryButton"
+                />
+
+        </RelativeLayout>
+
+        <TextView
+            android:background="@color/extra_background"
+            android:id="@+id/instruction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:paddingTop="7sp"
+            android:paddingBottom="5sp"/>
+
+        <TextView
+            android:background="@color/extra_background"
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:paddingTop="5sp"
+            android:paddingBottom="7sp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

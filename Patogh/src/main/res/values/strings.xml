@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="tab_names">
+        <item>            پانچ کارت</item>
+        <item>کیف پول</item>
+        <item>پاتوق</item>
+    </string-array>
+
+    <string name="app_name">        پاتوق</string>
+    <string name="exiting">برای خروج یکبار دیگر دکمه برگشت را فشار دهید</string>
+
+    <!-- DRAWER -->
+    <string name="drawer.open">باز</string>
+    <string name="drawer.close">بسته</string>
+
+    <!-- LOYALTY CARD -->
+    <string name="loyalty.scan">اسکن کارت تخفیف</string>
+    <string name="loyalty.favorite">کارتهای من</string>
+    <string name="loyalty.use">مصرف تخفیف</string>
+    <string name="loyalty.used_punches">با سپاس. شما با موفقیت تخفیف خود را استفاده کردید.</string>
+
+    <!-- COUPON -->
+    <string name="coupon.mine">کوپن های من</string>
+    <string name="coupon.all">همه کوپن ها</string>
+
+    <!-- APP RATER -->
+    <string name="rater.title">پاتوق را دوست دارید؟</string>
+    <string name="rater.promo">        اگر از پاتوق لذت میبرید, با دادن ستاره به پاتوق , پشتیبانی خود را نشان دهید. از حمایت شما متشکریم.</string>
+    <string name="rater.rate">ستاره میدم!</string>
+    <string name="rater.later">        بعدا میدم!</string>
+    <string name="rater.nope">        نه متشکرم!</string>
+
+    <!-- SCANNER -->
+    <string name="scanner.scan">اسکن QR کد</string>
+    <string name="scanner.rescan">اسکن مجدد</string>
+    <string name="scanner.description">به سمت QR کد مورد نظر نشانه بگیرید.</string>
+
+    <!-- SCANNER -->
+    <string name="profile.first_name">
+نام
+    </string>
+    <string name="profile.last_name">
+نام خانوادگی
+    </string>
+    <string name="profile.boy">
+پسرم
+    </string>
+    <string name="profile.girl">
+دخترم
+    </string>
+    <string name="profile.phone">
+شماره موبایل
+    </string>
+
+    <string name="connectivity">
+        درحال بررسی اینترنت موبایل
+    </string>
+    <string name="fast_wifi">
+برای تجربه بهتر , با اینترنت پر سرعت وصل شوید.
+    </string>
+    <string name="submit">
+        ثبت
+    </string>
+    <string name="cancel">
+انصراف
+    </string>
+
+</resources>
