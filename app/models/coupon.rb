@@ -26,6 +26,12 @@ class Coupon < ActiveRecord::Base
     end
   end
 
+  def self.hit_all
+    coupons = self.all
+    Coupon.where(id: coupons.map(&:id)).update_all 'impressions = impressions+1' unless coupons.empty?
+    coupons
+  end
+
 private
   
   def can_live?

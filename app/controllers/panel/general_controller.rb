@@ -16,6 +16,7 @@ class Panel::GeneralController < Panel::MainController
   end
 
   def charts
+    
   end
 
 end

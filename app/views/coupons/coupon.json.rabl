@@ -1,3 +1,3 @@
 object @coupon
-attributes :title, :description, 
+attributes :id, :title, :description, 
 node(:small400){ |o| o.image.url(:small400) }

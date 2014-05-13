@@ -1,5 +1,9 @@
 class Card < Venue
 
+  has_attached_file :card_image, styles: APP::PHOTO::CARD, url: "/system/venues/:attachment/:id_partition/:style/:basename.:extension"
+  has_attached_file :card_on, styles: APP::PHOTO::PUNCH_HOLE, url: "/system/venues/:attachment/:id_partition/:style/:basename.:extension"
+  has_attached_file :card_off, styles: APP::PHOTO::PUNCH_HOLE, url: "/system/venues/:attachment/:id_partition/:style/:basename.:extension"
+
   default_scope { select([:id, :ucode, :name, :address, :latitude, :longitude, :card_description, :card_image_file_name, :card_image_updated_at, :card_on_file_name, :card_on_updated_at, :card_off_file_name, :card_off_updated_at]).where( { has_card: true, state: :live } ) }
 
   def self.list(user_id=nil, just_mine=false, latitude=nil, longitude=nil)
