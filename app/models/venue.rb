@@ -8,6 +8,7 @@ class Venue < ActiveRecord::Base
   has_attached_file :card_off, styles: APP::PHOTO::PUNCH_HOLE
   belongs_to :category, class_name: 'VenueCategory', foreign_key: :venue_category_id
   has_many :user_venues
+  has_many :venue_likes
   has_one  :loyalty
   has_many :checkins, through: :user_venues, source: :user
   reverse_geocoded_by :latitude, :longitude
@@ -36,12 +37,35 @@ class Venue < ActiveRecord::Base
   scope :live, -> { where( state: :live ) }
 
 #METHODS
+  def has_liked=(liked)
+    @has_liked = liked
+  end
+
+  def has_liked
+    @has_liked 
+  end
+
   def self.around_me( latitude, longitude )
     where(state: 'live').near([latitude, longitude], APP::VENUE::DISTANCE, :units => :km)
   end
 
-  def checkin(user_id)
-    UserVenue.create( { user_id: user_id, venue_id: id } )
+  def checkin(user_id, action)
+    action = APP::ACTIONS.values.flatten.compact.find { |i| i['uname'] == action }
+    if action.blank?
+      errors[:base] << "Action is not valid! it should be from whitelisted actions."
+      return false
+    end
+    last_checkin = UserVenue.where( { user_id: user_id, venue_id: id } ).last
+    if last_checkin.blank? || last_checkin.created_at < Time.now - 20.minutes
+      last_checkin = UserVenue.create( { user_id: user_id, venue_id: id, action: action['text'], uname: action['uname'] } )
+    end
+    likes = VenueLike.where( venue_id: id, user_id: user_id ).select(:venue_id).first
+    last_checkin.venue.has_liked = !likes.blank?
+    last_checkin
+  end
+
+  def like(user_id)
+    venue_likes.where(user_id: user_id).first_or_create
   end
 
 private

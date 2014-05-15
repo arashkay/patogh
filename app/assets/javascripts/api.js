@@ -63,23 +63,18 @@ var api = [
   },
   { 
     path: "GET /api/v1/venues.json",
-    params: { scope: ['latitude', 'longitude', 'name'] }
+    params: { scope: ['latitude', 'longitude'] }
   },
   { 
-    path: "POST /api/v1/venues/suggest.json",
-    params: { venue: ['name', 'phone', 'address', 'latitude', 'longitude', 'image'] }
+    path: "POST /api/v1/venues/checkins.json"
   },
   { 
-    path: "PUT /api/v1/me/location.json",
-    params: { location: ['latitude', 'longitude'] }
+    path: "POST /api/v1/venues/checkin.json",
+    params: { id: null, checkin: ['action'] }
   },
   { 
-    path: "POST /api/v1/photos/:id/flagged.json",
-    params: { flag: ['body'] }
-  },
-  { 
-    path: "POST /api/v1/users/:id/flagged.json",
-    params: { flag: ['body'] }
+    path: "POST /api/v1/venues/like.json",
+    params: { id: null }
   }
 ]
 

@@ -53,6 +53,13 @@ Rails.application.routes.draw do
           post :mock
         end
       end
+      resources :venues, only:[:index] do
+        collection do
+          get  :checkins
+          post :checkin
+          post :like
+        end
+      end
     end
   end
 

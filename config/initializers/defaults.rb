@@ -12,6 +12,8 @@ module APP
   
   CONFIGS = configs
 
+  ACTIONS = APP::CONFIGS['actions']
+
   module VENUE
     DISTANCE = APP::CONFIGS['venue']['distance']
     
@@ -22,6 +24,7 @@ module APP
 
   module LISTING
     LIMIT = APP::CONFIGS['listing']['limit']
+    BULK = APP::CONFIGS['listing']['bulk']
   end
 
 #  module RESQUE
