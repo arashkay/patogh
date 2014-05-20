@@ -17,6 +17,7 @@ class Card < Venue
       owners = owners.around_me latitude, longitude
     end
     return owners if just_mine
+    owners = owners.all
     records = Loyalty.where(user_id: user_id, venue_id: owners.map(&:id))
     owners.each do |owner|
       record = records.select{ |r| r.venue_id == owner.id }.first
